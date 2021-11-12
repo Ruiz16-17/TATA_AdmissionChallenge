@@ -16,6 +16,7 @@ public class StoreUseCase {
     private PriceByMarkUseCase priceByMarkUseCase = new PriceByMarkUseCase();
     private PriceByShelvingUseCase priceByShelvingUseCase = new PriceByShelvingUseCase();
     private RemoveDrinkUseCase removeDrinkUseCase = new RemoveDrinkUseCase();
+    private PrintInfoTxtFileUseCase printInfoTxtFileUseCase =  new PrintInfoTxtFileUseCase();
 
     public void starts() {
 
@@ -60,6 +61,8 @@ public class StoreUseCase {
                     break;
 
                 case "6":
+
+                    System.out.println(printInfoTxtFileUseCase.apply("ProductsInfo.txt",store));
 
                     break;
 

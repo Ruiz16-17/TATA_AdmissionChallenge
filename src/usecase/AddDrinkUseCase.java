@@ -12,6 +12,22 @@ public class AddDrinkUseCase {
     private Scanner scanner = new Scanner(System.in);
     private Message message = new Message();
 
+    public String apply(Drink[][] store) {
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (store[j][i] == null) {
+                    store[j][i] = addItem();
+
+                    return message.getADDED() + message.message(store[j][i].getId());
+                }
+
+            }
+        }
+
+        return "The store is full";
+    }
+
     private Drink addItem(){
         String option = "";
         Drink drink = new Drink();
@@ -141,22 +157,6 @@ public class AddDrinkUseCase {
 
         return false;
 
-    }
-
-    public String apply(Drink[][] store) {
-
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (store[j][i] == null) {
-                    store[j][i] = addItem();
-
-                    return message.getADDED() + message.message(store[j][i].getId());
-                }
-
-            }
-        }
-
-        return "The store is full";
     }
 
 }

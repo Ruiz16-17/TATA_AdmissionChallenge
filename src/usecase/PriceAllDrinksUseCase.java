@@ -1,7 +1,6 @@
 package usecase;
 
 import models.Drink;
-import models.SugaryDrink;
 
 public class PriceAllDrinksUseCase {
 

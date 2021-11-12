@@ -49,4 +49,14 @@ public class Drink {
     public void setMark(String mark) {
         this.mark = mark;
     }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "id='" + id + '\'' +
+                ", liters=" + liters +
+                ", price=" + price +
+                ", mark='" + mark + '\'' +
+                '}';
+    }
 }

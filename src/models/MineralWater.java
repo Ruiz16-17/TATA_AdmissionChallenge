@@ -1,7 +1,5 @@
 package models;
 
-import java.util.UUID;
-
 public class MineralWater extends Drink{
 
     private String origin;
@@ -21,5 +19,13 @@ public class MineralWater extends Drink{
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n"+
+                "MineralWater{" +
+                "origin='" + origin + '\'' +
+                '}';
     }
 }

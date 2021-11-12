@@ -7,12 +7,14 @@ public class Message {
     private final String REMOVED = "ELIMINADO";
     private final String PRICE = "EL PRECIO ES DE: ";
     private final String NOT_FOUND = "NO ENCONTRADO";
+    private final String ERROR = "ERROR";
+    private final String CREATE_TXT_FILE = "ARCHIVO DE TEXTO CON LA INFORMACIÓN CREADO";
 
     public String message(String message) {
         return "\n" +
                 printMiddleGuines(message) +
                 "\n" +
-                "|" + message + "|" +
+                 message +
                 "\n" +
                 printMiddleGuines(message) +
                 "\n";
@@ -45,5 +47,13 @@ public class Message {
 
     public String getNOT_FOUND() {
         return message(NOT_FOUND);
+    }
+
+    public String getERROR() {
+        return message(ERROR);
+    }
+
+    public String getCREATE_TXT_FILE() {
+        return message(CREATE_TXT_FILE);
     }
 }

@@ -29,5 +29,14 @@ public class SugaryDrink extends Drink {
     public void setPromoted(boolean promoted) {
         isPromoted = promoted;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n"+
+                "SugaryDrink{" +
+                "suggarPercentage=" + suggarPercentage +
+                ", isPromoted=" + isPromoted +
+                '}';
+    }
 }
 

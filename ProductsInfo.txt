@@ -1,0 +1,37 @@
+Estantería de productos
+
+Drink{id='142eea93-d750-45d9-b978-121f6c95a9d8', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='b0443208-7606-4c7e-989a-a7fff507bbac', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='7b2731bd-4174-4dd6-8c9a-00dc32658890', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='60b4ab9d-87af-4930-880e-139f8bb26f9d', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='2d7d75dc-bb27-4308-88a0-e84f7c56d9ce', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+
+
+Drink{id='384b5a74-59bd-485b-be77-1e8745a32e15', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='25463837-b9c4-497f-ad96-003258f18967', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='2748bd63-d291-43b0-a1f5-2678f3f4ccdc', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+Drink{id='3488115d-548e-486d-9876-6cf602d5528a', liters=1, price=1.0, mark='1'}
+MineralWater{origin='Manantial'}
+
+
+
+
+
+
+
