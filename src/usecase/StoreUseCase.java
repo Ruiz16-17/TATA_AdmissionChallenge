@@ -1,8 +1,6 @@
 package usecase;
 
 import models.Drink;
-import models.MineralWater;
-import models.SugaryDrink;
 import utils.Message;
 import utils.ShowMenu;
 
@@ -13,10 +11,11 @@ public class StoreUseCase {
     private static Drink[][] store = new Drink[5][5];
     private Scanner scanner = new Scanner(System.in);
     private Message message = new Message();
-    private AddItemUseCase addItemUseCase = new AddItemUseCase();
+    private AddDrinkUseCase addDrinkUseCase = new AddDrinkUseCase();
     private PriceAllDrinksUseCase priceAllDrinksUseCase = new PriceAllDrinksUseCase();
     private PriceByMarkUseCase priceByMarkUseCase = new PriceByMarkUseCase();
     private PriceByShelvingUseCase priceByShelvingUseCase = new PriceByShelvingUseCase();
+    private RemoveDrinkUseCase removeDrinkUseCase = new RemoveDrinkUseCase();
 
     public void starts() {
 
@@ -50,11 +49,13 @@ public class StoreUseCase {
 
                 case "4":
 
-                    System.out.println(addItemUseCase.apply(store));
+                    System.out.println(addDrinkUseCase.apply(store));
 
                     break;
 
                 case "5":
+
+                    System.out.println(removeDrinkUseCase.apply(store));
 
                     break;
 

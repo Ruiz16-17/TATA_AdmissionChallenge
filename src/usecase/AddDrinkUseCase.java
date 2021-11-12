@@ -7,7 +7,7 @@ import utils.Message;
 
 import java.util.Scanner;
 
-public class AddItemUseCase {
+public class AddDrinkUseCase {
 
     private Scanner scanner = new Scanner(System.in);
     private Message message = new Message();
