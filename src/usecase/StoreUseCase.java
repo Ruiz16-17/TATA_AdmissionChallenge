@@ -4,6 +4,7 @@ import models.Drink;
 import models.MineralWater;
 import models.SugaryDrink;
 import utils.Message;
+import utils.ShowMenu;
 
 import java.util.Scanner;
 
@@ -13,14 +14,16 @@ public class StoreUseCase {
     private Scanner scanner = new Scanner(System.in);
     private Message message = new Message();
     private AddItemUseCase addItemUseCase = new AddItemUseCase();
+    private PriceAllDrinksUseCase priceAllDrinksUseCase = new PriceAllDrinksUseCase();
 
     public void starts() {
 
+        ShowMenu showMenu = new ShowMenu();
         String option = "";
 
         do {
 
-            showMenu();
+            showMenu.showMenu();
             option = scanner.nextLine();
 
             switch (option) {
@@ -29,7 +32,7 @@ public class StoreUseCase {
                     break;
 
                 case "1":
-
+                    System.out.println(message.message("El de todas las bebidas es de: " + priceAllDrinksUseCase.apply(store)));
                     break;
 
                 case "2":
@@ -64,28 +67,14 @@ public class StoreUseCase {
 
     }
 
-    private void showMenu() {
-
-        System.out.println(
-                "Reto de java, elija una opción: \n" +
-                        "0. Para salir.\n" +
-                        "1. Calcular precio de todas las bebidas.\n" +
-                        "2. Calcular el precio total de una marca de bebida.\n" +
-                        "3. Calcular el precio total de una estantería.\n" +
-                        "4. Agregar producto.\n" +
-                        "5. Eliminar un producto.\n" +
-                        "6. Mostrar información.\n"
-        );
-    }
-
     private String addItem() {
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (store[i][j] == null) {
                     store[i][j] = addItemUseCase.apply();
-                    System.out.println(store[i][j].getMark());
-                    return "Agregado";
+
+                    return message.getADDED() + message.message(store[i][j].getId());
                 }
 
             }
@@ -93,23 +82,6 @@ public class StoreUseCase {
 
         return "The store is full";
     }
-/*
-    private String priceAllDrinks() {
-        float totalprice = 0;
-
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (store[i][j] == null) {
-                    store[i][j] = addMineralWater();
-                    return "Agregado: \n" +
-                            "id: " + store[i][j].getId();
-                }
-
-            }
-        }
-
-        return "The store is full";
-    }*/
 
 
 }
