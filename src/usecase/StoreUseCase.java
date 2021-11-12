@@ -16,6 +16,7 @@ public class StoreUseCase {
     private AddItemUseCase addItemUseCase = new AddItemUseCase();
     private PriceAllDrinksUseCase priceAllDrinksUseCase = new PriceAllDrinksUseCase();
     private PriceByMarkUseCase priceByMarkUseCase = new PriceByMarkUseCase();
+    private PriceByShelvingUseCase priceByShelvingUseCase = new PriceByShelvingUseCase();
 
     public void starts() {
 
@@ -33,23 +34,23 @@ public class StoreUseCase {
                     break;
 
                 case "1":
-                    System.out.println(message.message("El precio de todas las bebidas es de: " + priceAllDrinksUseCase.apply(store)));
+                    System.out.println(message.message(message.getPRICE() + priceAllDrinksUseCase.apply(store)));
                     break;
 
                 case "2":
 
-                    System.out.println(message.message("El precio las bebidas es de: " + priceByMarkUseCase.apply(store)));
+                    System.out.println(message.message(message.getPRICE() + priceByMarkUseCase.apply(store)));
 
                     break;
 
                 case "3":
 
-
+                    System.out.println(message.message(message.getPRICE() + priceByShelvingUseCase.apply(store)));
                     break;
 
                 case "4":
 
-                    System.out.println(addItem());
+                    System.out.println(addItemUseCase.apply(store));
 
                     break;
 
@@ -70,22 +71,5 @@ public class StoreUseCase {
         } while (!option.equals("0"));
 
     }
-
-    private String addItem() {
-
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (store[i][j] == null) {
-                    store[i][j] = addItemUseCase.apply();
-
-                    return message.getADDED() + message.message(store[i][j].getId());
-                }
-
-            }
-        }
-
-        return "The store is full";
-    }
-
 
 }

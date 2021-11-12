@@ -12,7 +12,7 @@ public class AddItemUseCase {
     private Scanner scanner = new Scanner(System.in);
     private Message message = new Message();
 
-    public Drink apply(){
+    private Drink addItem(){
         String option = "";
         Drink drink = new Drink();
 
@@ -81,7 +81,7 @@ public class AddItemUseCase {
         return sugaryDrink;
     }
 
-    public String assingOrigin() {
+    private String assingOrigin() {
 
         String option = "";
 
@@ -115,7 +115,7 @@ public class AddItemUseCase {
 
     }
 
-    public boolean isPromoted() {
+    private boolean isPromoted() {
 
         String option = "";
 
@@ -141,6 +141,22 @@ public class AddItemUseCase {
 
         return false;
 
+    }
+
+    public String apply(Drink[][] store) {
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (store[j][i] == null) {
+                    store[j][i] = addItem();
+
+                    return message.getADDED() + message.message(store[j][i].getId());
+                }
+
+            }
+        }
+
+        return "The store is full";
     }
 
 }

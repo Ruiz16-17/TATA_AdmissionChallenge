@@ -5,6 +5,7 @@ public class Message {
     private final String INCORRECT_OPTION = "OPCIÓN INCORRECTA";
     private final String ADDED = "AGREGADO";
     private final String REMOVED = "ELIMINADO";
+    private final String PRICE = "EL PRECIO ES DE";
 
     public String message(String message) {
         return "\n" +
@@ -34,6 +35,10 @@ public class Message {
     }
 
     public String getREMOVED() {
-        return REMOVED;
+        return message(REMOVED);
+    }
+
+    public String getPRICE() {
+        return PRICE + " ";
     }
 }
