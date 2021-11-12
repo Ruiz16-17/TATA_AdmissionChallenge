@@ -15,6 +15,7 @@ public class StoreUseCase {
     private Message message = new Message();
     private AddItemUseCase addItemUseCase = new AddItemUseCase();
     private PriceAllDrinksUseCase priceAllDrinksUseCase = new PriceAllDrinksUseCase();
+    private PriceByMarkUseCase priceByMarkUseCase = new PriceByMarkUseCase();
 
     public void starts() {
 
@@ -32,10 +33,13 @@ public class StoreUseCase {
                     break;
 
                 case "1":
-                    System.out.println(message.message("El de todas las bebidas es de: " + priceAllDrinksUseCase.apply(store)));
+                    System.out.println(message.message("El precio de todas las bebidas es de: " + priceAllDrinksUseCase.apply(store)));
                     break;
 
                 case "2":
+
+                    System.out.println(message.message("El precio las bebidas es de: " + priceByMarkUseCase.apply(store)));
+
                     break;
 
                 case "3":
